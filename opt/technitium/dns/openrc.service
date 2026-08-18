@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+description="Technitium DNS Server"
+
+directory=/opt/technitium/dns
+
+command="/usr/bin/dotnet"
+command_args="/opt/technitium/dns/DnsServerApp.dll /etc/dns"
+command_user=dns-server:dns-server
+
+capabilities="^cap_net_bind_service"
+
+supervisor="supervise-daemon"
+respawn_delay=10
+respawn_max=0
+
+depend() {
+    need net
+}
