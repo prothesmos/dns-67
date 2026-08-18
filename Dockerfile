@@ -49,4 +49,5 @@ EXPOSE \
    67/udp
 
 LABEL org.opencontainers.image.title = "ASMGH-67-DNS"
-
+LABEL org.opencontainers.image.description = "Homelab DNS ( Technitium's Fork )
+LABEL org.opencontainers.image.source = "https://github.com/prothesmos/dns-67"
