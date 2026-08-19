@@ -1,0 +1,135 @@
+[2026-08-19 04:16:27 UTC] Logging started.
+[2026-08-19 04:16:34 UTC] DNS Server auth config file was saved: /home/workdir/dns-server/opt/technitium/dns/config/auth.config
+[2026-08-19 04:16:42 UTC] DHCP Server successfully saved scope file: /home/workdir/dns-server/opt/technitium/dns/config/scopes/Default.scope
+[2026-08-19 04:16:42 UTC] Web Service config file was saved: /home/workdir/dns-server/opt/technitium/dns/config/webservice.config
+[2026-08-19 04:16:43 UTC] DNS Server config file was saved: /home/workdir/dns-server/opt/technitium/dns/config/dns.config
+[2026-08-19 04:16:44 UTC] DNS Server allowed zone file was saved: /home/workdir/dns-server/opt/technitium/dns/config/allowed.config
+[2026-08-19 04:16:44 UTC] DNS Server blocked zone file was saved: /home/workdir/dns-server/opt/technitium/dns/config/blocked.config
+[2026-08-19 04:16:44 UTC] DNS Server block list config file was saved: /home/workdir/dns-server/opt/technitium/dns/config/blocklist.config
+[2026-08-19 04:16:47 UTC] DNS Server auth config file was saved: /home/workdir/dns-server/opt/technitium/dns/config/auth.config
+[2026-08-19 04:16:54 UTC] [[::]:5380] [HTTP] Web Service failed to bind.
+[2026-08-19 04:16:55 UTC] Web Service failed to start.
+System.IO.IOException: Failed to bind to address http://[::]:5380: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address in use
+ ---> System.Net.Sockets.SocketException (98): Address in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.EndpointsStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at DnsServerCore.DnsWebService.StartWebServiceAsync(Boolean httpOnlyMode) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 1986
+   at DnsServerCore.DnsWebService.StartWebServiceAsync(Boolean httpOnlyMode)
+   at DnsServerCore.DnsWebService.TryStartWebServiceAsync(IReadOnlyList`1 oldWebServiceLocalAddresses, Int32 oldWebServiceHttpPort, Int32 oldWebServiceTlsPort) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 1675
+[2026-08-19 04:16:55 UTC] Attempting to revert Web Service end point changes ...
+[2026-08-19 04:16:57 UTC] [[::]:5380] [HTTP] Web Service failed to bind.
+[2026-08-19 04:16:57 UTC] Web Service failed to start.
+System.IO.IOException: Failed to bind to address http://[::]:5380: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address in use
+ ---> System.Net.Sockets.SocketException (98): Address in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.EndpointsStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at DnsServerCore.DnsWebService.StartWebServiceAsync(Boolean httpOnlyMode) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 1986
+   at DnsServerCore.DnsWebService.StartWebServiceAsync(Boolean httpOnlyMode)
+   at DnsServerCore.DnsWebService.TryStartWebServiceAsync(IReadOnlyList`1 oldWebServiceLocalAddresses, Int32 oldWebServiceHttpPort, Int32 oldWebServiceTlsPort) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 1691
+[2026-08-19 04:16:57 UTC] Attempting to start Web Service on ANY (0.0.0.0) fallback address...
+[2026-08-19 04:16:58 UTC] [0.0.0.0:5380] [HTTP] Web Service failed to bind.
+[2026-08-19 04:16:58 UTC] Web Service failed to start.
+System.IO.IOException: Failed to bind to address http://0.0.0.0:5380: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address in use
+ ---> System.Net.Sockets.SocketException (98): Address in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.EndpointsStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at DnsServerCore.DnsWebService.StartWebServiceAsync(Boolean httpOnlyMode) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 1986
+   at DnsServerCore.DnsWebService.StartWebServiceAsync(Boolean httpOnlyMode)
+   at DnsServerCore.DnsWebService.TryStartWebServiceAsync(IReadOnlyList`1 oldWebServiceLocalAddresses, Int32 oldWebServiceHttpPort, Int32 oldWebServiceTlsPort) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 1711
+[2026-08-19 04:16:58 UTC] Attempting to start Web Service on loopback (127.0.0.1) fallback address...
+[2026-08-19 04:16:58 UTC] [127.0.0.1:5380] [HTTP] Web Service failed to bind.
+[2026-08-19 04:16:58 UTC] Failed to start DNS Server (v15.4.0.0).
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5380: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address in use
+ ---> System.Net.Sockets.SocketException (98): Address in use
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.EndpointsStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at DnsServerCore.DnsWebService.StartWebServiceAsync(Boolean httpOnlyMode) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 1986
+   at DnsServerCore.DnsWebService.StartWebServiceAsync(Boolean httpOnlyMode)
+   at DnsServerCore.DnsWebService.TryStartWebServiceAsync(IReadOnlyList`1 oldWebServiceLocalAddresses, Int32 oldWebServiceHttpPort, Int32 oldWebServiceTlsPort) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 1723
+   at DnsServerCore.DnsWebService.StartAsync(Boolean throwIfBindFails) in Z:\Technitium\Projects\DnsServer\DnsServerCore\DnsWebService.cs:line 2949
+[2026-08-19 04:16:59 UTC] DNS Server auth config file was saved: /home/workdir/dns-server/opt/technitium/dns/config/auth.config
+[2026-08-19 04:16:59 UTC] Logging stopped.
