@@ -35,7 +35,7 @@ RUN addgroup -S dns-server \
 
 WORKDIR /opt/technitium/dns
 
-COPY --link /DnsServer/DnsServerApp/bin/Release/publish /opt/technitium/dns
+COPY --link --from=build DnsServer/DnsServerApp/bin/Release/publish /opt/technitium/dns
 
 ENTRYPOINT ["/usr/bin/dotnet", "/opt/technitium/dns/DnsServerApp.dll"]
 CMD ["/etc/dns"]
