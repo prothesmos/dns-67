@@ -1,7 +1,7 @@
 services:
    dns-server:
       container_name: dns-server
-      image: technitium/dns-server:latest
+      image: ghcr.io/prothesmos/dns-67:latest
       hostname: dns-67
       ports:
         - "5380:5380/tcp"
